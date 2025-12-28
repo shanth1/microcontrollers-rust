@@ -1,23 +1,21 @@
-APP := cardputer-hello
-
-all: run
+PROJECT_DIR := firmware/cardputer/001-hello
 
 run:
-	cargo espflash flash --monitor -p $(APP)
+	cd $(PROJECT_DIR) && cargo run
 
 monitor:
-	cargo espflash monitor -p $(APP)
+	cd $(PROJECT_DIR) && cargo espflash monitor
+
+build:
+	cd $(PROJECT_DIR) && cargo build
 
 doc:
-	cargo doc --open
-
-doc-stable:
-	rustup doc --toolchain stable
+	cargo doc --open --workspace --no-deps
 
 clean:
 	cargo clean
 
 nuclear-clean:
 	cargo clean
-	rm -rf .embuild
-	rm -rf sdkconfig
+	rm -rf firmware/cardputer/001-hello/.embuild
+	rm -rf firmware/cardputer/001-hello/sdkconfig

@@ -4,7 +4,7 @@ resolver = "2"
 members = [
     "firmware/shared",
     "firmware/cardputer/001-hello"
-, "firmware"]
+]
 
 exclude = [
     "arduino",
