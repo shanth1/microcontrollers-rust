@@ -1,6 +1,7 @@
-/.vscode
-/.embuild
-/target
-/Cargo.lock
-
 .DS_Store
+
+/target/
+
+**/.embuild/
+**/sdkconfig.old
+**/bl_update.bin

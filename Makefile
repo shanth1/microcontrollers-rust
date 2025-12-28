@@ -1,15 +1,12 @@
-PROJECT_NAME := cardputer-hello
+APP := cardputer-hello
 
 all: run
 
 run:
-	cargo espflash flash --monitor
-
-build:
-	cargo build
+	cargo espflash flash --monitor -p $(APP)
 
 monitor:
-	cargo espflash monitor
+	cargo espflash monitor -p $(APP)
 
 doc:
 	cargo doc --open
